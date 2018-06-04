@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage[pdftex]{graphicx}
+%\usepackage[dvips]{graphicx}
+\usepackage{latexsym}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{braket}
+
+%margin control
+%\renewcommand{\baselinestretch}{1.1}
+\usepackage{geometry}
+\geometry{textheight=9in,
+          textwidth=6.5in,
+          top=1.0in,
+          left=1.0in}
+
+
+\usepackage[compact,sf,bf]{titlesec}
+\usepackage[lflt]{floatflt}
+
+\setlength{\headheight}{30pt}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{comment}
+
+
+\lhead{{\sf \textbf{{\large PHYS 316: Themal \& Statistical Physics}\\
+      Spring 2018} }} \rhead{
+\begin{floatingfigure}[r]{1cm}
+\vspace{-0.2cm}\includegraphics[height=1cm]{/Users/fstarr/docs/posters/wes_shield_lores.pdf}
+\end{floatingfigure}
+{\sf \textbf{Homework 4} \\
+  \textbf{Due: Thursday February 22}}}
+
+\begin{document}
+
+\begin{description}
+
+\item[Reading:] This week we are working on the core machinery of
+  statistical mechanics, and its connection to thermal physics. Be sure
+  that you have read Chapter 6.  Please also read \S 5.1 and 5.2, which
+  contain a hodgepodge of useful information, some of which we will not
+  take advantage of until later. 
+% This is the last homework before the first exam, scheduled for Tuesday February 28.
+
+\item[Problems:] 
+\end{description}
+
+\begin{enumerate}
+
+%\item Baierlein 5.2 -- three state system
+ 
+%\item Schroeder 6.13
+
+\item Last week we calculated the high and low $T$ behavior of the
+  quantum oscillator from a microcanonical (fixed $NVE$) perspective,
+  where we count states with specific energy.  This week, we
+  tackle the same question, but from the perspective of the canonical
+  partition function (fixed $NVT$), where we take advantage of the
+  partition function machinery.
+
+Recall that the energy of a quantum oscillator is given by
+$$E_n = \left(n+\frac{1}{2}\right) \epsilon_0 $$
+where $\epsilon_0/2$ is the ground state energy, and $n$ is an integer
+from zero to infinity describing the occupied energy level.
+\begin{enumerate}
+\item Calculate the partition function $Z$ for the quantum oscillator.
+  You will find it helpful to remember the expression for an infinite
+  geometric sum.
+\item From the partition function, evaluate the mean energy $U$.
+\item Evaluate the $T\rightarrow 0$ and $T\rightarrow \infty$ limits
+  of the energy.  Check that your results are consistent with the
+  previous week.  Isn't this approach much nicer?
+\end{enumerate}
+
+\item Schroeder 6.22, parts (a) and (b) only.  Be sure that you understand
+  the simple paramagnet described on p.\ 232-3.
+
+
+
+\item In the ``Zipper'' model for the formation of double-standed DNA
+  from two single strands, the cooperativity of bonding requires that
+  strands zip (or unzip) only from one end, so that the $n^{th}$ link
+  between strands only forms if bonds $(1, 2, \dots, n-1)$ are all
+  intact, mimicking a zipper.  For each intact bond, $E = -\epsilon$,
+  while each open bond has $E=0$.
+\begin{enumerate}
+\item For DNA of length $N$ bases, show that the partition function is given by
+$$ {Z} = \frac{e^{(N+1)\beta\epsilon}-1}{e^{\beta\epsilon}-1}. $$
+The finite geometric series you proved in Schroeder 6.22 is helpful.
+\item Determine the average number of bonded links $\langle n \rangle$.
+  To calculate this, take advantage of the fact that the average number
+  of links $\langle n \rangle = -U/\epsilon$.  
+\item For $T=0$, all links must be intact.  For $kT \ll \epsilon$ ({\it
+    i.e.}\ low $T$, but not zero), determine the average number of bonded
+  links to first order in $e^{-\beta\epsilon}$.  To do so, you will want
+  to take advantage of that $e^{-\beta\epsilon} \ll 1$ at low
+  temperature.
+\end{enumerate}
+
+\item Schroeder 6.26.  Including rotations is a step toward extending
+  the ideal gas description to simple molecular systems, like H$_2$ or
+  N$_2$.  Be sure you understand Schroeder's discussion from p.\ 234-236.
+
+\begin{comment}
+%% Schroeder does high T limit
+%% Low T limit done in question 6.26
+\item To extend our treatment of the ideal gas to molecular systems, we
+  need to account for the fact that molecules can rotate.  From quantum
+  mechanics, we know that rotational energy levels are quantized
+  according to
+\[ \epsilon(j) = j(j+1)\epsilon \]
+where $j=0,1,2,...$.  In addition, each rotational level has a multiplicity
+\[g(j) = 2j+1. \]
+\begin{enumerate}
+\item Evaluate the partition function for the rotational motion.
+  Remember that you must sum over all {\it states}, and that each energy
+  level has multiplicity.
+\item In the high-$T$ limit ($kT \gg \epsilon_{0}$), evaluate $Z$ by
+  converting the sum to an integral.
+\item In the low-$T$ limit ($kT \ll \epsilon_{0}$), evaluate $Z$ by
+  truncating the sum after the first non-trivial term (one is trivial).
+\item Evaluate the energy $U$ in both the high- and low-$T$ limits.
+\item Sketch $U$ as a function of $T$.  Note that I really mean sketch,
+  do not use a computer.  You will have only a low- and high-$T$
+  expression, so you will have to connect the two in a reasonable way.
+\end{enumerate}
+\end{comment}
+
+ \item Schroeder 6.51.
+% \item Schroeder 6.52
+
+
+\begin{comment}
+%%NEXT WEEK
+\item This problem illustrates an important point that the thermodynamic
+  repsonse functions (like specific heat and compressibility) are
+  related to the fluctuations around the mean of the thermodynamic
+  variables.  We will illustrate this specifically for specific hear.
+
+  Consider a system with fixed $NVT$ (canonical ensemble).  We already
+  know that the mean energy
+$$ U = \langle E \rangle = \frac{\sum_{s} E_s e^{-\beta E_s}}{Z}. $$
+Show that the
+  specific heat is related to fluctuations of energy via
+$$ C_{V} = \frac{\partial \langle E \rangle}{\partial T} = \frac{1}{kT^{2}} \left( \langle E^{2} \rangle - \langle E \rangle^{2} \right). $$
+The fact that specific heat (or any other second derivative of the free
+energy) can be related to fluctuations is very valuable to computer
+simulations of model systems.
+\end{comment}
+
+
+
+\end{enumerate}
+
+\end{document}
